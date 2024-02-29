@@ -15,5 +15,6 @@ export const GlobalStyle = createGlobalStyle `
 `
 
 export const Wrapper = styled.div`
-    
+    width: 1280px;
+    margin: 50px auto;
 `

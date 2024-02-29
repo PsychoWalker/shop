@@ -2,7 +2,9 @@ import React from 'react';
 
 function Footer() {
     return (
-        <footer>(c) Все права защищены</footer>
+        <footer>
+            Все права защищены
+        </footer>
     );
 }
 
