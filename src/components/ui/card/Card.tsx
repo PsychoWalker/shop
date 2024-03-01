@@ -1,5 +1,6 @@
 import React from 'react';
 import {CardStyled} from "./style";
+import { Card } from 'antd';
 
 interface CardProps {
     idProduct: number,
@@ -9,18 +10,19 @@ interface CardProps {
     priceProduct: string
 }
 
-export const Card: React.FC<CardProps>
+const { Meta } = Card;
+
+export const CardProduct: React.FC<CardProps>
     = ({idProduct, urlProduct, titleProduct, descProduct, priceProduct}: CardProps) => {
 
     return (
         <>
-            <CardStyled>
-                <img src={urlProduct}/>
-                <div>
-                    <span>{titleProduct}</span>
-                    <p>{descProduct}</p>
-                    <p className="price">Цена: {priceProduct}</p>
-                </div>
+            <CardStyled
+                hoverable
+                cover={<img alt={titleProduct} src={urlProduct} />}
+            >
+                <Meta title={titleProduct} description={descProduct} />
+                <p className="price">Цена: {priceProduct}</p>
                 <div className="addBusket">+</div>
             </CardStyled>
         </>

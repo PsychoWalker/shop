@@ -1,17 +1,25 @@
 import styled from "styled-components";
+import { Card } from 'antd';
 
-export const CardStyled = styled.div`
+export const CardStyled = styled(Card)`
     width:30%;
     position: relative;
     background: #efefef;
-
     
-    & div {
-        padding: 20px;
+    & .ant-card-cover {
+            overflow: hidden;
+            padding: 0;
+            max-height: 384px;
     }
     
     & img {
         width: 100%;
+        transition: transform .25s linear;
+    }
+    
+    & img:hover {
+            transition: transform .25s linear;
+            transform: scale(1.05);
     }
     
     & span {
@@ -31,8 +39,8 @@ export const CardStyled = styled.div`
         position: absolute;
         bottom: 10px;
         right: 10px;
-        width: 10px;
-        height: 10px;
+        width: 30px;
+        height: 30px;
         border-radius: 50%;
         background-color: #bd4444;
         color: #fff;
@@ -40,11 +48,11 @@ export const CardStyled = styled.div`
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        transition: .15s linear
+        transition: .15s linear;
     }
     
     & .addBusket:hover {
-        background-color: red;
+        background-color: #bc001a;
         transition: .15s linear;
     }
 `

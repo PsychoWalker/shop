@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card} from '../ui/card/Card'
+import {CardProduct} from '../ui/card/Card'
 import {MainStyled} from "./style";
 
 interface MainProps {
@@ -12,7 +12,7 @@ export const Main:React.FC<MainProps> = ({productsList}: MainProps) => {
         <MainStyled>
             <section className="products">
                 {productsList.map((products) => {
-                    return <Card idProduct={products.id} urlProduct={products.img} titleProduct={products.title} descProduct={products.desc} priceProduct={products.price}/>
+                    return <CardProduct key={products.id} idProduct={products.id} urlProduct={products.img} titleProduct={products.title} descProduct={products.desc} priceProduct={products.price}/>
                 })}
             </section>
         </MainStyled>

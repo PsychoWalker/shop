@@ -1,5 +1,18 @@
 import styled from "styled-components";
 import mainBG from '../../../assets/img/main-ground.jpg';
+import { FaShoppingBasket } from "react-icons/fa";
+
+export const FaShoppingBasketStyled = styled(FaShoppingBasket) `
+    width: 20px;
+    height: 20px;
+    
+    &:hover,
+     &.active {
+        color: #bd4444;
+    }
+`
+
+
 
 export const HeaderUpperStyled = styled.div`
     display: flex;
