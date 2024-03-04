@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import mainBG from '../../../assets/img/main-ground.jpg';
 import { FaShoppingBasket } from "react-icons/fa";
+import {Modal} from "antd";
 
 export const FaShoppingBasketStyled = styled(FaShoppingBasket) `
     width: 20px;
@@ -12,12 +13,36 @@ export const FaShoppingBasketStyled = styled(FaShoppingBasket) `
     }
 `
 
-
+export const ModalBasket = styled(Modal) `
+    & .basketLine {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    
+    & .basketLine span {
+        width: 25%;
+    }
+    
+    & .basketLine .basketRemove {
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
+        color: #bd4444;
+        font-size: 18px;
+        line-height: 100%;
+    }
+    
+    & .basketNumber {
+        max-width: 25px;
+    }
+`
 
 export const HeaderUpperStyled = styled.div`
     display: flex;
     justify-content: space-between;
-    margin-bottom: 40px;
+            margin-bottom: 40px;
+
 `
 
 export const HeaderMainStyled = styled.div`
@@ -28,6 +53,7 @@ export const HeaderMainStyled = styled.div`
     background-size: cover;
     height: 500px;
     position: relative;
+    padding-top: 140px;
     
     &::before {
         position: absolute;
@@ -53,6 +79,7 @@ export const HeaderMainStyled = styled.div`
 
 export const NavigationMenu = styled.ul`
     display: flex;
+    align-items: center;
     gap: 40px;
     
     & li {

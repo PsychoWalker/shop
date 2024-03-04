@@ -7,14 +7,15 @@ interface CardProps {
     urlProduct: string,
     titleProduct: string,
     descProduct: string,
-    priceProduct: string
+    priceProduct: string,
+    getProduct: Todo,
+    added: (item: Todo) => void;
 }
 
 const { Meta } = Card;
 
 export const CardProduct: React.FC<CardProps>
-    = ({idProduct, urlProduct, titleProduct, descProduct, priceProduct}: CardProps) => {
-
+    = ({ getProduct, idProduct, urlProduct, titleProduct, descProduct, priceProduct, added}: CardProps) => {
     return (
         <>
             <CardStyled
@@ -23,7 +24,7 @@ export const CardProduct: React.FC<CardProps>
             >
                 <Meta title={titleProduct} description={descProduct} />
                 <p className="price">Цена: {priceProduct}</p>
-                <div className="addBusket">+</div>
+                <div className="addBusket" onClick={() => added(getProduct)}>+</div>
             </CardStyled>
         </>
     );

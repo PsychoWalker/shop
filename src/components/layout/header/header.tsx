@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
 import {Logo} from "../../ui/logo/logo";
-import {HeaderUpperStyled, HeaderMainStyled, NavigationMenu, FaShoppingBasketStyled} from "./style";
+import {HeaderUpperStyled, HeaderMainStyled, NavigationMenu, FaShoppingBasketStyled, ModalBasket} from "./style";
 import { Modal } from 'antd';
-import { FaShoppingBasket } from "react-icons/fa";
 
-function Header() {
+interface Orders {
+    orders: Todo[],
+    onDelete: (item: Todo) => void;
+}
+
+export const Header: React.FC<Orders> = ({orders, onDelete}:Orders) => {
     let [cartActive, setCartActive] = useState(false);
 
     const showModal = () => {
@@ -30,14 +34,18 @@ function Header() {
                 <li>Кабинет</li>
             </NavigationMenu>
             {cartActive && (
-                <Modal title="Basic Modal" open={cartActive} onOk={handleOk} onCancel={handleCancel}>
-
-                </Modal>
+                <ModalBasket title="Корзина" open={cartActive} onOk={handleOk} onCancel={handleCancel}>
+                    { orders.length == 0 ? (<p>Ваша Корзина пуста</p>) : (
+                        orders.map((order,  index) => (
+                            <p className="basketLine" key={index}><span className="basketNumber">{index+1}.</span> <span>{order.title}</span> - <span>{order.price}</span> <span className="basketRemove" onClick={() => {onDelete(order)}}>x</span></p>
+                        ))
+                    )}
+                </ModalBasket>
             )}
         </HeaderUpperStyled>
         <HeaderMainStyled />
         </header>
     );
-}
+};
 
 export default Header;
