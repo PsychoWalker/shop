@@ -23,6 +23,9 @@ export const Header: React.FC<Orders> = ({orders, onDelete}:Orders) => {
         setCartActive(false);
     };
 
+    let summ:number = 0;
+    orders.forEach(el => summ += Number.parseFloat(el.price));
+
     return (
         <header>
         <HeaderUpperStyled>
@@ -40,6 +43,9 @@ export const Header: React.FC<Orders> = ({orders, onDelete}:Orders) => {
                             <p className="basketLine" key={index}><span className="basketNumber">{index+1}.</span> <span>{order.title}</span> - <span>{order.price}</span> <span className="basketRemove" onClick={() => {onDelete(order)}}>x</span></p>
                         ))
                     )}
+                    <p className="totalPrice">
+                       Общая сумма: {summ} золотых.
+                    </p>
                 </ModalBasket>
             )}
         </HeaderUpperStyled>
