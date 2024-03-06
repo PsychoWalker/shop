@@ -77,7 +77,7 @@ const productsList = [
         title: 'Твердыня',
         img:'./img/house-10.jpg',
         desc: 'Lorem ipsum dolor sit amet',
-        category: 'stone',
+        category: 'obsidian',
         price: '1000000'
     }
 ]

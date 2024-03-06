@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {Logo} from "../../ui/logo/logo";
 import {HeaderUpperStyled, HeaderMainStyled, NavigationMenu, FaShoppingBasketStyled, ModalBasket} from "./style";
-import { Modal } from 'antd';
 
 interface Orders {
     orders: Todo[],
