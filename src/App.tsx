@@ -3,7 +3,6 @@ import Header from "./components/layout/header/header";
 import Footer from "./components/layout/footer/footer";
 import { GlobalStyle, Wrapper } from "./style";
 import {Main} from "./components/main/main";
-import {isInt8Array} from "util/types";
 
 interface MainProps {
     productsList: Todo[];
@@ -11,6 +10,7 @@ interface MainProps {
 
 export const App: React.FC<MainProps> = ({productsList}: MainProps) => {
     const [orders, setOrders] = useState<Todo[]>([]);
+    const [filters, setFilters] = useState<Todo[]>(productsList);
 
     const addToOrder = (item: Todo) => {
         let isInArray = false;
@@ -25,6 +25,10 @@ export const App: React.FC<MainProps> = ({productsList}: MainProps) => {
         setOrders(orders.filter(p => p.id !== id.id));
     }
 
+    const filterHandler = (categories: string) => {
+        categories === 'all' ? setFilters(productsList) : setFilters(productsList.filter(el => el.category === categories));
+    }
+
    /* useEffect(() => {
         console.log(orders)
     }, [orders]) */
@@ -33,7 +37,7 @@ export const App: React.FC<MainProps> = ({productsList}: MainProps) => {
     <Wrapper>
       <GlobalStyle />
       <Header orders={orders} onDelete={deleteOrder}/>
-      <Main productsList={productsList} onAdd={addToOrder}/>
+      <Main productsList={filters} onAdd={addToOrder} onFilter={filterHandler}/>
       <Footer />
     </Wrapper>
   );

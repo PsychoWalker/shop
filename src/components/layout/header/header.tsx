@@ -43,7 +43,7 @@ export const Header: React.FC<Orders> = ({orders, onDelete}:Orders) => {
                         ))
                     )}
                     <p className="totalPrice">
-                       Общая сумма: {summ} золотых.
+                       Общая сумма: {summ.toFixed(2)} золотых.
                     </p>
                 </ModalBasket>
             )}

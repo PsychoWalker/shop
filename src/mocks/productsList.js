@@ -22,7 +22,7 @@ const productsList = [
         img:'./img/house-3.jpg',
         desc: 'Lorem ipsum dolor sit amet',
         category: 'wood',
-        price: '149.99'
+        price: '149.99 золотых'
     },
     {
         id: 4,
@@ -30,7 +30,7 @@ const productsList = [
         img:'./img/house-4.jpg',
         desc: 'Lorem ipsum dolor sit amet',
         category: 'wood',
-        price: '2500'
+        price: '2500 золотых'
     },
     {
         id: 5,
@@ -38,7 +38,7 @@ const productsList = [
         img:'./img/house-5.jpg',
         desc: 'Lorem ipsum dolor sit amet',
         category: 'stone',
-        price: '249.99'
+        price: '249.99 золотых'
     },
     {
         id: 6,
@@ -46,7 +46,7 @@ const productsList = [
         img:'./img/house-6.jpg',
         desc: 'Lorem ipsum dolor sit amet',
         category: 'stone',
-        price: '1500'
+        price: '1500 золотых'
     },
     {
         id: 7,
@@ -54,7 +54,7 @@ const productsList = [
         img:'./img/house-7.jpg',
         desc: 'Lorem ipsum dolor sit amet',
         category: 'stone',
-        price: '5000'
+        price: '5000 золотых'
     },
     {
         id: 8,
@@ -62,7 +62,7 @@ const productsList = [
         img:'./img/house-8.jpg',
         desc: 'Lorem ipsum dolor sit amet',
         category: 'stone',
-        price: '25000'
+        price: '25000 золотых'
     },
     {
         id: 9,
@@ -70,7 +70,7 @@ const productsList = [
         img:'./img/house-9.jpg',
         desc: 'Lorem ipsum dolor sit amet',
         category: 'stone',
-        price: '40000'
+        price: '40000 золотых'
     },
     {
         id: 10,
@@ -78,7 +78,7 @@ const productsList = [
         img:'./img/house-10.jpg',
         desc: 'Lorem ipsum dolor sit amet',
         category: 'obsidian',
-        price: '1000000'
+        price: '1000000 золотых'
     }
 ]
 
